@@ -3,62 +3,57 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>User Data Table</title>
+  <title>Display Data in Cards</title>
   <style>
     body {
       font-family: Arial, sans-serif;
       background-color: #f9f9f9;
       padding: 20px;
     }
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 20px;
+    .card-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 20px;
     }
-    th, td {
-      padding: 12px;
+    .card {
+      background-color: #fff;
       border: 1px solid #ddd;
-      text-align: left;
-    }
-    th {
-      background-color: #4CAF50;
-      color: white;
-    }
-    tr:nth-child(even) {
-      background-color: #f2f2f2;
-    }
-    h2 {
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
       text-align: center;
+    }
+    .card img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      margin-bottom: 15px;
+    }
+    .card h3 {
+      margin: 10px 0;
+      font-size: 1.2em;
+    }
+    .card p {
+      font-size: 1em;
+      color: #555;
     }
   </style>
 </head>
 <body>
 
-  <h2>User Data Table</h2>
-  
-  <table id="userTable">
-    <thead>
-      <tr>
-        <th>ID</th>
-        <th>Name</th>
-        <th>Username</th>
-        <th>Email</th>
-        <th>Phone</th>
-        <th>Website</th>
-        <th>Company</th>
-      </tr>
-    </thead>
-    <tbody>
-      <!-- Table data will be inserted here by JavaScript -->
-    </tbody>
-  </table>
+  <h2>User Cards</h2>
+
+  <div id="card-container" class="card-container">
+    <!-- Cards will be dynamically added here -->
+  </div>
 
   <script>
+    // Your JSON data (or it could be fetched from an API)
     const users = [
       {
         "id": 1,
-        "name": "Maniraj",
-        "username": "mnraj4667",
+        "name": "Rajavel",
+        "username": "Rajavelofficial",
         "email": "manirajk.mca@srmvec.ac.in",
         "phone": "91-80729 22340",
         "website": "cits.org",
@@ -66,108 +61,51 @@
       },
       {
         "id": 2,
-        "name": "Siva Kumar",
-        "username": "Antonette",
+        "name": "Raja Gobal",
+        "username": "rajagobal_r2r",
         "email": "Shanna@melissa.tv",
-        "phone": "010-692-6593 x09125",
+        "phone": "+91-76936 09125",
         "website": "anastasia.net",
         "company": "Deckow-Crist"
       },
       {
         "id": 3,
-        "name": "Antro Jeffrie",
-        "username": "Samantha",
+        "name": "Ruthra",
+        "username": "Ruthra_kabbadi",
         "email": "Nathan@yesenia.net",
-        "phone": "1-463-123-4447",
+        "phone": "+91-63123 44547",
         "website": "ramiro.info",
         "company": "Romaguera-Jacobson"
       },
-      {
-        "id": 4,
-        "name": "Fathima",
-        "username": "Karianne",
-        "email": "Julianne.OConner@kory.org",
-        "phone": "493-170-9623 x156",
-        "website": "kale.biz",
-        "company": "Robel-Corkery"
-      },
-      {
-        "id": 5,
-        "name": "Bismi Gani",
-        "username": "Kamren",
-        "email": "Lucio_Hettinger@annie.ca",
-        "phone": "(254)954-1289",
-        "website": "demarco.info",
-        "company": "Keebler LLC"
-      },
-      {
-        "id": 6,
-        "name": "Mrs. Dennis Schulist",
-        "username": "Leopoldo_Corkery",
-        "email": "Karley_Dach@jasper.info",
-        "phone": "1-477-935-8478 x6430",
-        "website": "ola.org",
-        "company": "Considine-Lockman"
-      },
-      {
-        "id": 7,
-        "name": "Kurtis Weissnat",
-        "username": "Elwyn.Skiles",
-        "email": "Telly.Hoeger@billy.biz",
-        "phone": "210.067.6132",
-        "website": "elvis.io",
-        "company": "Johns Group"
-      },
-      {
-        "id": 8,
-        "name": "Nicholas Runolfsdottir V",
-        "username": "Maxime_Nienow",
-        "email": "Sherwood@rosamond.me",
-        "phone": "586.493.6943 x140",
-        "website": "jacynthe.com",
-        "company": "Abernathy Group"
-      },
-      {
-        "id": 9,
-        "name": "Glenna Reichert",
-        "username": "Delphine",
-        "email": "Chaim_McDermott@dana.io",
-        "phone": "(775)976-6794 x41206",
-        "website": "conrad.com",
-        "company": "Yost and Sons"
-      },
-      {
-        "id": 10,
-        "name": "Clementina DuBuque",
-        "username": "Moriah.Stanton",
-        "email": "Rey.Padberg@karina.biz",
-        "phone": "024-648-3804",
-        "website": "ambrose.net",
-        "company": "Hoeger LLC"
-      }
+      // Add more users as needed
     ];
 
-    function populateTable() {
-      const tableBody = document.querySelector("#userTable tbody");
-      users.forEach(user => {
-        const row = document.createElement("tr");
+    // Function to display cards
+    function displayCards() {
+      const container = document.getElementById("card-container");
 
-        row.innerHTML = `
-          <td>${user.id}</td>
-          <td>${user.name}</td>
-          <td>${user.username}</td>
-          <td>${user.email}</td>
-          <td>${user.phone}</td>
-          <td>${user.website}</td>
-          <td>${user.company}</td>
+      users.forEach(user => {
+        // Create a card
+        const card = document.createElement("div");
+        card.classList.add("card");
+
+        // Add user information to the card
+        card.innerHTML = `
+          <h3>${user.name}</h3>
+          <p><strong>Username:</strong> ${user.username}</p>
+          <p><strong>Email:</strong> ${user.email}</p>
+          <p><strong>Phone:</strong> ${user.phone}</p>
+          <p><strong>Website:</strong> <a href="http://${user.website}" target="_blank">${user.website}</a></p>
+          <p><strong>Company:</strong> ${user.company}</p>
         `;
-        
-        tableBody.appendChild(row);
+
+        // Append the card to the container
+        container.appendChild(card);
       });
     }
 
-    // Populate the table on page load
-    window.onload = populateTable;
+    // Call the function to display the cards
+    displayCards();
   </script>
 
 </body>
