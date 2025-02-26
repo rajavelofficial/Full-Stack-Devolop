@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form Submission Example</title>
+  <style>
+    .success-message {
+      color: green;
+      display: none;
+      margin-top: 10px;
+    }
+    .form-container {
+      width: 300px;
+      margin: 0 auto;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="form-container">
+    <h2>Submit Form</h2>
+    <form id="myForm" onsubmit="return showSuccessMessage(event)">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required><br><br>
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required><br><br>
+
+      <button type="submit">Submit</button>
+    </form>
+
+    <p id="successMessage" class="success-message">Form submitted successfully!</p>
+  </div>
+
+  <script>
+    function showSuccessMessage(event) {
+      event.preventDefault(); // Prevent the form from actually submitting to demonstrate the success message
+
+      // Show the success message
+      const successMessage = document.getElementById('successMessage');
+      successMessage.style.display = 'block';
+      
+      // Optionally, hide the form if you want to clear it after submission
+      document.getElementById('myForm').reset();
+    }
+  </script>
+  
+</body>
+</html>
