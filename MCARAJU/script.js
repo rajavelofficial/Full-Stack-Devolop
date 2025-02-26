@@ -1,19 +1,15 @@
-<script>
-        function validateForm() {
-            let isValid = true;
+ function validateForm() {
+    var isValid = true;
 
-            // Clear previous error messages
-            document.getElementById('nameError').innerText = '';
-            document.getElementById('emailError').innerText = '';
+        document.getElementById('nameError').innerText = '';
+        document.getElementById('emailError').innerText = '';
 
-            // Validate name
-            const name = document.getElementById('name').value;
-            if (name === '') {
+        const name = document.getElementById('name').value;
+        if (name === '') {
                 document.getElementById('nameError').innerText = 'Name is required';
                 isValid = false;
             }
 
-            // Validate email
             const email = document.getElementById('email').value;
             const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
             if (email === '') {
@@ -23,13 +19,10 @@
             else if (!emailPattern.test(email)) {
                 document.getElementById('emailError').innerText = 'Invalid email format';
                 isValid = false;
-            }
-
-            return isValid;
         }
-    }
 
+    return isValid;
 }
-</script>
+
  
     
