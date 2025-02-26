@@ -8,45 +8,39 @@
         .error { color: red; }
     </style>
 </head>
-<body background="#b4f8d7">
-    <form id="myForm">
+<body bgcolor="#b4f8d7">
+    <form id="myForm" onsubmit="validation()">
         <center>
             <table>
-                <center><tr><h1>REGISTRATION FORM</h1></tr></center>
+                <center><tr><h2>REGISTRATION FORM</h2></tr></center>
                 <tr>
-                  <td><label for="name">Name:</label></td>
+                  <td><label for="name">Username:</label></td></tr><tr>
+
                   <td><input type="text" id="name" name="name">
                   <span id="nameError" class="error"></span></td></tr><br>
 
-                  <tr><td><label for="email">Email:</label></td>
-                  <td><input type="email" id="email" name="email">
-                  <span id="emailError" class="error"></span></td>
-                </tr><br>
+                  <tr><td><label for="email">Email:</label></td></tr>
 
-                  <tr><td><label for="email">Phone no:</label></td>
-                  <td><input type="number" id="Phone" name="Phone">
+                  <tr></tr><td><input type="email" id="email" name="email">
                   <span id="emailError" class="error"></span></td></tr><br>
 
+                  <tr><td><label for="email">Phone no:</label></td></tr>
 
-                  <tr><td><label for="email">Password:</label></td>
-                  <td><input type="password" id="Password" name="Password">
+                  <tr></tr><td><input type="number" id="Phone" name="Phone">
                   <span id="emailError" class="error"></span></td></tr><br>
 
-                  <tr> <td><p>SELECT YOUR COURSE:</td>
-                       <td><select name="Subject" id="Subject">
-                           <option value="MTECH">MTECH</option>
-                           <option value="MCA">MCA</option>
-                           <option value="MBA">MBA</option>
-                           <option value="M.COM">M.COM</M></option>
-                           <option value="validateForm">Validation</option>
-                           </select></p>
-                        </td>
-                    </tr><br>
-                <tr><td><input type="submit" value="Submit"></td></tr>
-        </table>
+                  <tr><td><label for="email">Password:</label></td></tr>
+
+                  <tr><td><input type="password" id="Password" name="Password">
+                  <span id="emailError" class="error"></span></td></tr><br>
+        </table><br><br>
+        <input type="submit" value="Submit">
     </center>
 </form>
 <script>
+    function validation(){
+        window.alert("Form Submitted Sucessfully");
+    }
 
 </script>
 </body>
