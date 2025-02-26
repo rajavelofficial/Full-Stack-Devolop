@@ -44,7 +44,7 @@
   <h2>From API Cards</h2>
 
   <div id="card-container" class="card-container">
-    <!-- Cards will be dynamically added here -->
+   
   </div>
 
   <script>
@@ -74,7 +74,7 @@
         "phone": "+91-63123 44547",
         "company": "Google CEO"
       },
-      // Add more users as needed
+     
     ];
 
     // Function to display cards
@@ -82,11 +82,10 @@
       const container = document.getElementById("card-container");
 
       users.forEach(user => {
-        // Create a card
+        
         const card = document.createElement("div");
         card.classList.add("card");
 
-        // Add user information to the card
         card.innerHTML = `
           <h3>${user.name}</h3>
           <p><strong>Username:</strong> ${user.username}</p>
@@ -95,7 +94,6 @@
           <p><strong>Company:</strong> ${user.company}</p>
         `;
 
-        // Append the card to the container
         container.appendChild(card);
       });
     }
