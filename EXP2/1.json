@@ -1,0 +1,24 @@
+[
+    {
+      "id": 1,
+      "name": "Ruthra",
+      "role": "Software Engineer",
+      "email": "john@example.com",
+      "phone": "123-456-7890"
+    },
+    {
+      "id": 2,
+      "name": "Rajavel",
+      "role": "Product Manager",
+      "email": "jane@example.com",
+      "phone": "987-654-3210"
+    },
+    {
+        "id": 3,
+        "name": "Gopal",
+        "role": "Product Manager",
+        "email": "jane@example.com",
+        "phone": "987-654-3210"
+      }
+  ]
+  
