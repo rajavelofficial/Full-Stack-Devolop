@@ -1,3 +1,4 @@
+
 // API URL
 const api_url = "http://10.1.31.123:8080//1.json"; 
 //http://127.0.0.1:8080/s2.js
@@ -12,6 +13,7 @@ async function getEmployeeData() {
         
         // Check if the response is successful
         if (!response.ok) {
+            mode : 'no-cors'
             throw new Error('Failed to fetch data');
         }
 
@@ -23,7 +25,7 @@ async function getEmployeeData() {
 
         // Loop through the fetched data and populate the table
         data.forEach(employee => {
-            const row = document.createElement('tr');
+            const row = document.createElement('table table-striped mt-3');
 
             // Create and append table cells for each employee attribute
             row.innerHTML = `
@@ -49,3 +51,5 @@ async function getEmployeeData() {
 
 // Call the function to fetch employee data
 getEmployeeData();
+
+  
