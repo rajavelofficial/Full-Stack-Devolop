@@ -1,6 +1,8 @@
 
 // API URL
-const api_url = "http://10.1.31.123:8080//1.json"; 
+const api_url = "http://10.1.31.123:8080//1.json:1";
+const app_url = "http://10.1.31.123:8080//s2.js:12"; 
+const GET = "http://10.1.31.123:8080//1.json";
 //http://127.0.0.1:8080/s2.js
 // Function to fetch employee data
 async function getEmployeeData() {

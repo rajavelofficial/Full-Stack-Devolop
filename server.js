@@ -4,14 +4,14 @@ const app = express();
 
 // Enable all CORS requests
 app.use(cors({
+  origin: "http://127.0.0.1:8080",
+  credentials: true,
   
 }));
 
 
-app.get('/', (req, res) => {
+app.put('/data', (req, res) => {
   res.json({ message: 'CORS is now enabled!' });
 });
 
-app.listen(3000, () => {
-  console.log('Server is running on port 3000');
-});
+app.listen(3000);
